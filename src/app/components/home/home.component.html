@@ -1,0 +1,33 @@
+<div class="home-container">
+    <div class="welcome-container">
+        <div class="welcome-message">
+            <img src="assets/hand.gif" alt="Wave Icon" class="icon">
+            <div>
+                <h1>Welcome to Dev Talker's<span *ngIf="userName !== ''">, {{ userName }}!</span></h1>
+                <p>Find answers to your technical questions and help others answer theirs.</p>
+            </div>
+        </div>
+        <button class="ask-button" (click)="askQuestion()">Ask question</button>
+    </div>
+    
+    <div class="questions-list">
+        <div class="question-item" *ngFor="let question of questions">
+            <div class="question-stats">
+                <div>{{ question.votes }} votes</div>
+                <div [ngClass]="{'answer-badge': question.isAnswered, 'unanswered-badge': !question.isAnswered}">{{ question.answers }} answers</div>
+                <div class="view-badge">{{ question.views }} views</div>
+            </div>
+            <div class="question-content">
+                <div class="question-text" (click)="navigateToQuestion(question.id)">{{ question.text }}</div>
+                <div class="question-tags">
+                    <span *ngFor="let tag of question.tags" class="tag">{{ tag }}</span>
+                </div>
+            </div>
+            <div class="question-time">
+                {{ question.timeAgo }}
+            </div>
+        </div>
+    </div>
+</div>
+
+<app-popup [message]="popupMessage" [success]="popupSuccess" [isPopupVisible]="isPopupVisible" (onClose)="onClosePopup($event)"></app-popup>    

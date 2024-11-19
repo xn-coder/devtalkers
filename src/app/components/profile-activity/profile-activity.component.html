@@ -1,0 +1,50 @@
+<div class="profile-activity">
+    <div class="section">
+      <h2>Answers</h2>
+      <div *ngIf="answers.length === 0">You have not answered any questions</div>
+      <ul *ngIf="answers.length > 0">
+        <li routerLink="/question/{{ answer.id }}" *ngFor="let answer of answers">
+          <div>{{ answer.answer }}</div>
+        </li>
+      </ul>
+    </div>
+    <div class="section">
+      <h2>Questions</h2>
+      <div *ngIf="questions.length === 0" class="no-questions">You have not asked any questions</div>
+      <ul *ngIf="questions.length > 0">
+        <li routerLink="/question/{{ question.id }}" *ngFor="let question of questions">
+          <div>{{ question.question }}</div>
+        </li>
+      </ul>
+    </div>
+    <div class="section">
+      <h2>Tags</h2>
+      <div *ngIf="user.tags.length === 0">You have not participated in any tags</div>
+      <div *ngIf="user.tags.length > 0">
+        <ul *ngFor="let tag of user.tags">
+          <li>{{ tag.tag }}</li>
+        </ul>
+      </div>
+    </div>
+    <section class="badges">
+      <h2>Badges</h2>
+      <div class="badge-container">
+        <div class="badge gold">
+          <img src="assets/gold.png" alt="gold badge">
+          <p>You don’t have a gold badge yet. Write an answer that scores 100 or more to earn your first.</p>
+          <button>Browse questions</button>
+        </div>
+        <div class="badge silver">
+          <img src="assets/silver.png" alt="silver badge">
+          <p>You don’t have a silver badge yet. Ask a question that scores 25 or more to earn your first.</p>
+          <button>Ask a question</button>
+        </div>
+        <div class="badge bronze">
+          <img src="assets/bronze.png" alt="bronze badge">
+          <p>1 bronze badge</p>
+          <span class="badge-info">Informed</span>
+          <span class="badge-date">Oct 29</span>
+        </div>
+      </div>
+    </section>
+  </div>

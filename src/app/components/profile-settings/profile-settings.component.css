@@ -1,0 +1,35 @@
+.settings-container {
+    display: flex;
+}
+
+.sidebar {
+    color: #fff;
+    padding: 20px;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar li {
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.sidebar li:hover {
+    background-color: #444;
+}
+
+.active {
+    background-color: #ff7f50;
+}
+
+.preferences {
+    flex-grow: 1;
+    padding: 10px;
+    color: #fff;
+    border-radius: 10px;
+}

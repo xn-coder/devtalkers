@@ -1,0 +1,45 @@
+<div class="ask-question-form">
+    <h2>Ask a Question</h2>
+
+    <div class="info-box">
+        <h3>Writing a good question</h3>
+        <p>You're ready to ask a programming-related question and this form will help guide you through the process. Looking to ask a non-programming question? See the topics here to find a relevant site.</p>
+        <h4>Steps</h4>
+        <ul>
+          <li>Summarize your problem in a one-line title.</li>
+          <li>Describe your problem in more detail.</li>
+          <li>Describe what you tried and what you expected to happen.</li>
+          <li>Add "tags" which help surface your question to members of the community.</li>
+          <li>Review your question and post it to the site.</li>
+        </ul>
+      </div>
+
+    <form>
+      <div class="form-group">
+        <label for="questionTitle">Title</label>
+        <input type="text" id="questionTitle" [(ngModel)]="question.title" name="title" placeholder="Enter your question title" required>
+      </div>
+      <div class="form-group">
+        <label for="questionDescription">Description</label>
+        <textarea id="questionDescription" [(ngModel)]="question.description" name="description" rows="5" placeholder="Describe your question in detail" required></textarea>
+      </div>
+      <div class="form-group">
+        <label for="questionTags">Tags</label>
+        <input type="text" id="questionTags" [(ngModel)]="tagInput" [ngModelOptions]="{standalone: true}" (input)="filterTags()" (keydown)="handleKeyDown($event)" placeholder="Add tags separated by commas">
+        <ul class="autocomplete-list" *ngIf="tagInput.length > 0">
+          <li *ngFor="let tag of filteredTags; let i = index" [class.active]="i === activeIndex" (click)="addTag(tag)">
+            {{ tag }}
+          </li>
+        </ul>
+        <div class="tags-container">
+          <span class="tag" *ngFor="let tag of question.tags; let i = index">
+            {{ tag }}
+            <button class="delete-btn" (click)="removeTag(i)" aria-label="Remove tag">&times;</button>
+          </span>
+        </div>
+      </div>
+      <button type="submit" (click)="onSubmit()" [disabled]="validateForm()">Post</button>
+    </form>
+  </div>
+
+  <app-popup [message]="popupMessage" [success]="popupSuccess" [isPopupVisible]="isPopupVisible" (onClose)="onClosePopup($event)"></app-popup>

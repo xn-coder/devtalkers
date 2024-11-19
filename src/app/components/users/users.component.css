@@ -1,0 +1,110 @@
+.users-container {
+    padding: 20px;
+    background-color: #2d2d2d;
+    color: white;
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.search-bar {
+    position: relative;
+}
+
+.search-bar i {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.search-bar input {
+    padding: 10px 10px 10px 35px;
+    color: var(--text-dark);
+    border-radius: 7px;
+    background-color: #2e2e2e;
+    border: 1px solid var(--border-dark);
+}
+
+.tabs {
+    border: 1px solid var(--border-dark);
+    border-radius: 7px;
+    padding: 3px;
+    gap: 3px;
+}
+
+.tabs button {
+    background-color: var(--background-color);
+    color: #fff;
+    padding: 7px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.tabs button:hover {
+    background-color: #3f3f3f;
+}
+
+.tabs button.active {
+    background-color: #656565;
+}
+
+.users-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.user-card {
+    cursor: pointer;
+    background-color: #36393f;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    display: flex;
+}
+
+.user-image {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.user-info {
+    margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: self-start;
+}
+
+.user-name {
+    font-size: 1.2rem;
+    margin-bottom: 3px;
+}
+
+.user-location {
+    font-size: 0.9rem;
+    margin-bottom: 3px;
+}
+
+.user-reputation {
+    font-size: .9rem;
+    font-weight: 600;
+    margin-bottom: 3px;
+}
+
+.user-skills {
+    font-size: .8rem;
+    margin-bottom: 3px;
+    text-align: left;
+}

@@ -1,0 +1,47 @@
+.profile-saves {
+    background-color: #36393f;
+    color: #ffffff;
+    text-align: center;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 8px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.create-list-btn {
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.content {
+    margin-top: 20px;
+}
+
+.content p {
+    font-size: 14px;
+    text-align: left;
+}
+
+.empty-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 70px;
+}
+
+.empty-state i {
+    font-size: 70px;
+}
+
+.empty-state span {
+    font-size: 18px;
+}

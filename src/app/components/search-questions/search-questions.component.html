@@ -1,0 +1,20 @@
+<div class="container">
+    <div class="questions-list">
+      <div class="question-item" *ngFor="let question of questions">
+          <div class="question-stats">
+              <div>{{ question.votes }} votes</div>
+              <div [ngClass]="{'answer-badge': question.isAnswered, 'unanswered-badge': !question.isAnswered}">{{ question.answers }} answers</div>
+              <div class="view-badge">{{ question.views }} views</div>
+          </div>
+          <div class="question-content">
+              <div class="question-text" routerLink="/question/{{ question.id }}">{{ question.text }}</div>
+              <div class="question-description">{{ question.description }}</div>
+              <div class="question-tags">
+                  <span *ngFor="let tag of question.tags" class="tag">{{ tag }}</span>
+              </div>
+          </div>
+          <div class="question-time">
+              {{ question.timeAgo }}
+          </div>
+      </div>
+</div>

@@ -1,0 +1,28 @@
+<div class="questions-container">
+    <div class="question" *ngFor="let question of questions">
+      <div class="votes">
+        <div>{{ question.votes }}</div>
+        <span>votes</span>
+      </div>
+      <div class="answers" [class.answered]="question.answered">
+        <div>{{ question.answers }}</div>
+        <span>answers</span>
+      </div>
+      <div class="question-details">
+        <a href="#" class="question-title">{{ question.title }}</a>
+        <div class="tags">
+          <span *ngFor="let tag of question.tags" class="tag">{{ tag }}</span>
+        </div>
+        <div class="asked-info">
+          asked {{ question.asked }}
+        </div>
+      </div>
+    </div>
+  
+    <!-- Pagination -->
+    <div class="pagination">
+      <button (click)="prevPage()" [disabled]="currentPage === 1">Prev</button>
+      <span>Page {{ currentPage }} of {{ totalPages }}</span>
+      <button (click)="nextPage()" [disabled]="currentPage === totalPages">Next</button>
+    </div>
+  </div>

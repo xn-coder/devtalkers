@@ -1,0 +1,21 @@
+<div class="profile-container">
+  <div class="profile-header">
+    <img [src]="user.image" alt="Profile Image" class="profile-image">
+    <div class="profile-details">
+      <h1 class="profile-name">{{ user.name }}</h1>
+      <p class="profile-info">
+        <span><i class="fa-solid fa-cake-candles"></i> Member for {{ user.daysSinceJoined }} days</span>
+      </p>
+    </div>
+    <div class="profile-actions">
+      <button class="edit-profile" *ngIf="userId === paramsId" (click)="navigateTo('/profile/settings/edit')">✏️ Edit profile</button>
+      <button class="logout" *ngIf="userId === paramsId" (click)="logout()"> <i class="fa-solid fa-right-from-bracket"></i> Logout</button>
+    </div>
+  </div>
+  <div class="profile-navigation">
+    <button class="nav-button" [class.active]="router.isActive('/profile/' + paramsId, true)" (click)="navigateTo('/profile/' + paramsId)">Profile</button>
+    <button class="nav-button" [class.active]="router.isActive('/profile/' + paramsId + '/activity', false)" (click)="navigateTo('/profile/' + paramsId + '/activity')">Activity</button>
+    <button class="nav-button" [class.active]="router.isActive('/profile/' + paramsId + '/saves', false)" *ngIf="userId === paramsId" (click)="navigateTo('/profile/' + paramsId + '/saves')">Saves</button>
+    <button class="nav-button" [class.active]="router.isActive('/profile/' + paramsId + '/settings', false)" *ngIf="userId === paramsId" (click)="navigateTo('/profile/' + paramsId + '/settings')">Settings</button>
+  </div>
+</div>

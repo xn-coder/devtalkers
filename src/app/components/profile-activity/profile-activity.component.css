@@ -1,0 +1,95 @@
+.profile-activity {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  color: #fff;
+  padding: 20px;
+}
+
+.section,
+.badges {
+  flex: 1 1 45%;
+}
+
+.section h2 {
+  margin-bottom: 5px;
+}
+
+.section div.no-questions, .section ul {
+  border-radius: 8px;
+  padding: 25px;
+  background-color: #36393f;
+  font-size: 14px;
+  text-align: center;
+}
+
+.section ul {
+  list-style-type: none;
+}
+
+.section ul li {
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #4f535c;
+  text-align: left;
+  color: #ff7f50;
+  cursor: pointer;
+  word-wrap: break-word;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.section ul li:hover {
+  background-color: #5f636c;
+}
+
+.section ul li:last-child {
+  margin-bottom: 0;
+}
+
+.badges h2 {
+  margin-bottom: 10px;
+}
+
+.badge-container {
+  display: flex;
+  gap: 10px;
+}
+
+.badge {
+  flex: 1;
+  padding: 30px;
+  border-radius: 5px;
+  text-align: center;
+  background-color: #36393f;
+}
+
+.badge img {
+  width: 70px;
+  height: 70px;
+  margin-bottom: 10px;
+}
+
+button {
+  margin-top: 10px;
+  padding: 5px 10px;
+  background-color: #7289da;
+  color: #ffffff;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #5b6eae;
+}
+
+.badge-info,
+.badge-date {
+  display: block;
+  margin-top: 5px;
+}

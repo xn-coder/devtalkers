@@ -1,0 +1,35 @@
+
+.preferences-content {
+    display: flex;
+    flex-direction: row;
+    background-color: #36393f;
+    align-items: center;
+    border-radius: 10px;
+    padding: 30px;
+    margin-top: 20px;
+}
+
+.theme-select {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: auto;
+}
+
+.theme-select label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 10px;
+    margin-right: 30px;
+}
+
+.theme-select label img {
+    width: 100px;
+    height: 70px;
+}
+
+.theme-select label span {
+    margin-top: 5px;
+}
+

@@ -1,0 +1,118 @@
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    background-color: var(--background-dark);
+    color: var(--text-dark);
+}
+
+.description {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.description p {
+    width: 60%;
+    margin: 20px 0;
+}
+
+.description button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.controls i {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.search-bar {
+    padding: 10px 10px 10px 35px;
+    color: var(--text-dark);
+    border-radius: 7px;
+    background-color: #2e2e2e;
+    border: 1px solid var(--border-dark);
+}
+
+.tabs {
+    border: 1px solid var(--border-dark);
+    border-radius: 7px;
+    padding: 3px;
+    gap: 3px;
+}
+
+.tabs button {
+    background-color: var(--background-color);
+    color: #fff;
+    padding: 7px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.tabs button:hover {
+    background-color: #3f3f3f;
+}
+
+.tabs button.active {
+    background-color: #656565;
+}
+
+.tag-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 10px;
+}
+
+.tag-card {
+    background-color: #36393f;
+    border-radius: 8px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: self-start;
+    justify-content: space-between;
+}
+
+.tag-card .tag {
+    background-color: #4f535b;
+    color: var(--text-dark);
+    border-radius: 3px;
+    padding: 2px 5px;
+    margin-bottom: 10px;
+}
+
+.tag-card p {
+    font-size: 13px;
+    color: var(--text-dark);
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    margin: 0;
+}
+
+.questions {
+    font-weight: bold;
+    font-size: 13px;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+}

@@ -1,0 +1,108 @@
+<div class="profile-edit">
+  <h1>Edit your profile</h1>
+  <form>
+    <h2>Public information</h2>
+    <section>
+      <div>
+        <label>Profile image</label>
+        <img [src]="user.image" alt="Profile image" />
+        <label class="file-input" for="profileImage">Change picture</label>
+        <input
+          type="file"
+          id="profileImage"
+          name="profileImage"
+          (change)="onImageSelected($event)"
+          accept="image/*"
+          hidden
+        />
+      </div>
+      <div>
+        <label for="displayName">Display name</label>
+        <input
+          id="displayName"
+          type="text"
+          name="displayName"
+          [(ngModel)]="user.name"
+        />
+      </div>
+      <div>
+        <label for="location">Location</label>
+        <input
+          id="location"
+          type="text"
+          name="location"
+          [(ngModel)]="user.location"
+        />
+      </div>
+      <div>
+        <label for="title">Title</label>
+        <input
+          id="title"
+          type="text"
+          name="title"
+          placeholder="No title has been set"
+          [(ngModel)]="user.title"
+        />
+      </div>
+      <div>
+        <label for="aboutMe">About me</label>
+        <textarea
+          id="aboutMe"
+          name="aboutMe"
+          [(ngModel)]="user.about"
+        ></textarea>
+      </div>
+    </section>
+
+    <h2>Links</h2>
+    <section>
+      <div>
+        <label for="website">Website link</label>
+        <input
+          id="website"
+          type="url"
+          name="website"
+          [(ngModel)]="user.web_link"
+        />
+      </div>
+      <div>
+        <label for="twitter">Twitter link or username</label>
+        <input
+          id="twitter"
+          type="text"
+          name="twitter"
+          [(ngModel)]="user.twi_link"
+        />
+      </div>
+      <div>
+        <label for="github">GitHub link or username</label>
+        <input
+          id="github"
+          type="text"
+          name="github"
+          [(ngModel)]="user.git_link"
+        />
+      </div>
+    </section>
+
+    <h2>Private information</h2>
+    <section>
+      <div>
+        <label for="fullName">Full name</label>
+        <input
+          id="fullName"
+          type="text"
+          name="fullName"
+          [(ngModel)]="user.full_name"
+        />
+      </div>
+    </section>
+
+    <div class="buttons">
+      <button type="submit" (click)="saveProfile()">Save profile</button>
+      <button type="button" (click)="cancel()">Cancel</button>
+    </div>
+  </form>
+</div>
+
+<app-popup [isPopupVisible]="isPopupVisible" [message]="popupMessage" [success]="success" (onClose)="onClosePopup($event)"></app-popup>

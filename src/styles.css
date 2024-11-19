@@ -1,1 +1,26 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+    --background-dark: #2e2e2e;
+    --border-dark: #878787;
+    --text-dark: #fff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.app-layout {
+  display: flex;
+  background-color: var(--background-dark);
+}
+
+app-side-bar {
+  padding-left: 10%;
+  flex: 0 0 20%;
+  border-right: 1px solid var(--border-dark);
+}
+
+.main-content {
+  flex: 1;
+}

@@ -1,0 +1,104 @@
+.navbar {
+    position: sticky;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #333;
+    border-top: 2px solid #ff6846;
+    padding: 13px 10%;
+    border-bottom: 1px solid var(--border-dark);
+    z-index: 100000;
+}
+.navbar .logo {
+    color: var(--text-dark);
+    font-size: 24px;
+    text-decoration: none;
+}
+.navbar img {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+}
+.navbar .logo-text {
+    color: #ff6846;
+}
+.navbar .search-container {
+    flex-grow: 1;
+    margin: 0 20px;
+    position: relative;
+}
+.navbar .search-container i {
+    position: absolute;
+    color: var(--text-dark);
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.navbar input {
+    width: 100%;
+    padding: 10px 10px 10px 30px;
+    color: var(--text-dark);
+    border-radius: 7px;
+    background-color: #2e2e2e;
+    border: 1px solid var(--border-dark);
+}
+.navbar .buttons, .navbar .profile {
+    display: flex;
+    gap: 10px;
+}
+.navbar .buttons a {
+    color: var(--text-dark);
+    text-decoration: none;
+    padding: 7px 12px;
+    background-color: #555;
+    border-radius: 3px;
+    transition: background-color 0.3s;
+}
+.navbar .buttons a:hover {
+    background-color: #777;
+}
+.navbar .profile .profile-image {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #555;
+    cursor: pointer;
+}
+.navbar .profile .notification {
+    color: #ffd746;
+    padding: 10px 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    font-size: 18px;
+    background: none;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.navbar .profile .notification:hover {
+    background-color: #777;
+}
+
+.navbar .profile .notification span {
+    font-size: 10px;
+    position: absolute;
+    color: var(--text-dark);
+    background-color: #ff6846;
+    border-radius: 50%;
+    padding: 2px 5px;
+    top: 2px;
+    right: 2px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .navbar .logo {
+        display: none;
+    }
+    .navbar .search-container {
+        margin: 0 10px;
+    }
+}

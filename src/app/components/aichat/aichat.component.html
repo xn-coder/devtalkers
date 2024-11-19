@@ -1,0 +1,26 @@
+<div id="app-container">
+    <div id="chat-container">
+      <h1>DevTalker's</h1>
+      
+
+      <!-- Messages -->
+      <div id="messages">
+        <img class="rounded-image" src="assets/logo.png" alt="Human Tech Image" />
+        <div *ngFor="let message of messages" [ngClass]="message.sender">
+          <div [innerHTML]="message.text"></div>
+        </div>
+      </div>
+
+      <!-- Input -->
+      <div id="input-container">
+        <input type="text" id="user-input" (keyup.enter)="sendMessage(userInput.value); userInput.value=''" placeholder="Type your message here..." #userInput />
+        <button id="send-btn" (click)="sendMessage(userInput.value); userInput.value=''">Send</button>
+      </div>
+
+      <!-- Prompt -->
+      <div class="prompt">
+        <h3>Want to ask something else?</h3>
+        <p>Type your new query in the input box above and click "Send".</p>
+      </div>
+    </div>
+  </div>

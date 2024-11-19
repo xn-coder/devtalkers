@@ -1,0 +1,47 @@
+<div class="profile-body">
+    <section class="about">
+      <h2>About</h2>
+      <div class="about-content" *ngIf="paramsId === userId">
+        <p *ngIf="about === ''">Your about me section is currently blank. Would you like to add one? <a (click)="navigateTo('/profile/' + userId + '/settings/edit')" style="cursor: pointer; color: #007bff;">Edit profile</a></p>
+        <p *ngIf="about !== ''">{{ about }}</p>
+      </div>
+      <div class="about-content" *ngIf="paramsId !== userId">
+        <p *ngIf="about === ''">This user has not added an about me section yet.</p>
+        <p *ngIf="about !== ''">{{ user.about }}</p>
+      </div>
+    </section>
+  
+    <section class="badges">
+      <h2>Badges</h2>
+      <div class="badge-container">
+        <div class="badge gold">
+          <img src="assets/gold.png" alt="gold badge">
+          <p>You don’t have a gold badge yet. Write an answer that scores 100 or more to earn your first.</p>
+          <button>Browse questions</button>
+        </div>
+        <div class="badge silver">
+          <img src="assets/silver.png" alt="silver badge">
+          <p>You don’t have a silver badge yet. Ask a question that scores 25 or more to earn your first.</p>
+          <button>Ask a question</button>
+        </div>
+        <div class="badge bronze">
+          <img src="assets/bronze.png" alt="bronze badge">
+          <p>1 bronze badge</p>
+          <span class="badge-info">Informed</span>
+          <span class="badge-date">Oct 29</span>
+        </div>
+      </div>
+    </section>
+  
+    <section class="posts">
+      <h2>Posts</h2>
+      <div class="post-content">
+        <div class="post-content-icon">
+          <i class="fa-solid fa-server"></i>
+        </div>
+        <div>
+          Your most helpful questions, answers and tags will appear here. Start by answering a question or selecting tags that match topics you’re interested in.
+        </div>
+      </div>
+    </section>
+  </div>

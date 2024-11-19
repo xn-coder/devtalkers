@@ -1,0 +1,35 @@
+<div class="container">
+  <div class="header">
+    <h1>All Questions</h1>
+    <button class="ask-question" (click)="askQuestion()">Ask Question</button>
+  </div>
+  <div class="question-tabs">
+    <div class="question-count">{{ questions.length }} questions</div>
+    <div class="buttons">
+      <button class="button" [class.active]="tab === 'Newest'" (click)="tabChanged('Newest')">Newest</button>
+      <button class="button" [class.active]="tab === 'Active'" (click)="tabChanged('Active')">Active</button>
+      <button class="button" [class.active]="tab === 'Unanswered'" (click)="tabChanged('Unanswered')">Unanswered</button>
+    </div>
+  </div>
+  <div class="questions-list">
+    <div class="question-item" *ngFor="let question of questions">
+        <div class="question-stats">
+            <div>{{ question.votes }} votes</div>
+            <div [ngClass]="(question.isAnswered) ? 'answer-badge' : 'unanswered-badge'">{{ question.answers }} answers</div>
+            <div class="view-badge">{{ question.views }} views</div>
+        </div>
+        <div class="question-content">
+            <div class="question-text" (click)="navigateToQuestion(question.id)">{{ question.text }}</div>
+            <div class="question-description">{{ question.description }}</div>
+            <div class="question-tags">
+                <span *ngFor="let tag of question.tags" class="tag">{{ tag }}</span>
+            </div>
+        </div>
+        <div class="question-time">
+            {{ getTimeAgo(question.timeAgo) }}
+        </div>
+    </div>
+</div>
+</div>
+
+<app-popup [message]="popupMessage" [success]="popupSuccess" [isPopupVisible]="isPopupVisible" (onClose)="onClosePopup($event)"></app-popup>

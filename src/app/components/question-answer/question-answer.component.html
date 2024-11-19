@@ -1,0 +1,60 @@
+<div class="question-container">
+  <div class="question-header">
+    <div class="question-title">
+      <h1>{{ question.title }}</h1>
+      <div class="question-stats">
+        <div>Asked {{ question.timeAgo }}</div>
+        <div>Viewed {{ question.views }} times</div>
+      </div>
+    </div>
+    <div class="buttons">
+      <button class="ask-question" routerLink="/ask-question">Ask Question</button>
+    </div>
+  </div>
+  <div class="question-body">
+    <div class="question-votes">
+      <button class="vote-button" (click)="voteQuestion('up')">▲</button>
+      <div class="question-votes-count">{{ question.votes }}</div>
+      <button class="vote-button" (click)="voteQuestion('down')">▼</button>
+      <button class="saved-button"><i class="fa-regular fa-bookmark"></i></button>
+    </div>
+    <div class="question-body-content">
+      <div class="question-content">
+        <p>{{ question.body }}</p>
+      </div>
+      <div class="question-tags">
+        <span *ngFor="let item of question.tags" class="tag">{{ item }}</span>
+      </div>
+    </div>
+  </div>
+  <div class="question-answers">
+    <h2>{{ answers.length }} Answers</h2>
+    <div class="answers" *ngFor="let answer of answers">
+      <div class="answer-votes">
+        <button class="accepted-button" *ngIf="acceptOption" [ngClass]="{'accepted-mark': answer.accepted}" (click)="acceptAnswer(answer.id, question.id)"><i class="fa-regular fa-check"></i></button>
+        <button class="vote-button" (click)="voteAnswer(answer.id, 'up')">▲</button>
+        <div class="answer-votes-count">{{ answer.votes }}</div>
+        <button class="vote-button" (click)="voteAnswer(answer.id, 'down')">▼</button>
+        <button class="saved-button"><i class="fa-regular fa-bookmark"></i></button>
+      </div>
+      <div class="answer-content">
+        <div class="answer-body">
+          {{ answer.body }}
+        </div>
+        <div class="answer-stats">
+          <div>Answered {{ answer.timeAgo }}</div>
+          <div class="profile-image">
+            <img [src]="answer.profileImage" alt="Profile Image">
+            <div class="profile-name">{{ answer.profileName }}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="answer-form">
+    <textarea [(ngModel)]="answerBody" placeholder="Your answer here"></textarea>
+    <button class="answer-button" (click)="addAnswer()" [disabled]="answerBody === ''">Answer</button>
+  </div>
+</div>
+
+<app-popup [message]="popupMessage" [success]="popupSuccess" [isPopupVisible]="isPopupVisible" (onClose)="onClosePopup($event)"></app-popup>

@@ -1,0 +1,25 @@
+<div class="navbar">
+    <img src="/assets/logo.png" alt="Logo">
+    <a href="#" class="logo">
+        <span>
+            Dev<span class="logo-text">Talker's</span>
+        </span>
+    </a>
+    <div class="search-container">
+        <i class="fa-regular fa-magnifying-glass"></i>
+        <input type="text" placeholder="Search..." (input)="searchQuestions($event)">
+    </div>
+    <div *ngIf="!isAuthenticated; else profileTemplate" class="buttons">
+        <a routerLink="/login">Login</a>
+        <a routerLink="/signup" style="background-color: #ff6846; color: white;">Sign Up</a>
+    </div>
+    <ng-template #profileTemplate>
+        <div class="profile">
+            <div class="notification">
+                <i class="fa-sharp fa-solid fa-bell"></i>
+                <span>1</span>
+            </div>
+            <div class="profile-image" (click)="profileInfo()" style="background-image: url('{{ profileImage }}'); background-size: cover; background-position: center;"></div>
+        </div>
+    </ng-template>
+</div>

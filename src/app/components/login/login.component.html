@@ -1,0 +1,22 @@
+<div class="login-container">
+    <img src="assets/logo.png" alt="Logo" class="logo">
+    <div class="login-form">
+
+      <h2>Log in to Dev Talker's</h2>
+
+      <label for="email">Email</label>
+      <input type="email" id="email" placeholder="Email" [(ngModel)]="userData.email" required>
+      
+      <label for="password">Password</label>
+      <input type="password" id="password" placeholder="Password" [(ngModel)]="userData.password" required>
+      <div class="password-container">
+        <a href="#" class="forgot-password">Forgot password?</a>
+      </div>
+      
+      <button class="login-button" (click)="onSubmit()">Log in</button>
+    </div>
+    
+    <p class="signup-text">Don’t have an account? <a routerLink="/register">Sign up</a></p>
+  </div>
+
+<app-popup [isPopupVisible]="isPopupVisible" [message]="popupMessage" [success]="success" (onClose)="onClosePopup($event)"></app-popup>
