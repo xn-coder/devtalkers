@@ -3,6 +3,7 @@ package com.xncoder.devtalker.Controllers;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
@@ -23,6 +24,9 @@ public class ChatController {
 	
 	private static String requestBody;
 	
+	@Value("${spring.ai.openai.api-key}")
+	private String api_key;
+	
 	@PostMapping("/message")
 	public Map<String, String> sendMessage(@RequestBody String message) {
 
@@ -30,7 +34,7 @@ public class ChatController {
 
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_JSON);
-        headers.setBearerAuth("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");
+        headers.setBearerAuth(api_key);
 
         requestBody = "{"
                 + "\"model\": \"llama3-8b-8192\","

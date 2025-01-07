@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { UserService } from '../../services/user.service';
 
 @Component({
   selector: 'app-profile-settings',
@@ -8,7 +9,11 @@ import { Router } from '@angular/router';
 })
 export class ProfileSettingsComponent {
 
-  constructor(public router: Router) {}
+  userId: string = '';
+
+  constructor(public router: Router, private userService: UserService) {
+    this.userId = this.userService.getUserId();
+  }
 
   navigateTo(path: string) {
     this.router.navigate([path]);

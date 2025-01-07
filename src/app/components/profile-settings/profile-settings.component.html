@@ -1,9 +1,9 @@
 <div class="settings-container">
   <aside class="sidebar">
     <ul>
-      <li [class.active]="router.isActive('/profile/settings', true)" (click)="navigateTo('/profile/settings')">Preferences</li>
-      <li [class.active]="router.isActive('/profile/settings/edit', true)" (click)="navigateTo('/profile/settings/edit')">Edit profile</li>
-      <li [class.active]="router.isActive('/profile/settings/delete', true)" (click)="navigateTo('/profile/settings/delete')">Delete account</li>
+      <li [class.active]="router.isActive('/profile/' + userId + '/settings', true)" (click)="navigateTo('/profile/' + userId + '/settings')">Preferences</li>
+      <li [class.active]="router.isActive('/profile/' + userId + '/settings/edit', true)" (click)="navigateTo('/profile/' + userId + '/settings/edit')">Edit profile</li>
+      <li [class.active]="router.isActive('/profile/' + userId + '/settings/delete', true)" (click)="navigateTo('/profile/' + userId + '/settings/delete')">Delete account</li>
     </ul>
   </aside>
   <main class="preferences">

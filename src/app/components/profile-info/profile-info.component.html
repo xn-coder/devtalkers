@@ -8,7 +8,7 @@
       </p>
     </div>
     <div class="profile-actions">
-      <button class="edit-profile" *ngIf="userId === paramsId" (click)="navigateTo('/profile/settings/edit')">✏️ Edit profile</button>
+      <button class="edit-profile" *ngIf="userId === paramsId" (click)="navigateTo('/profile/' + userId + '/settings/edit')">✏️ Edit profile</button>
       <button class="logout" *ngIf="userId === paramsId" (click)="logout()"> <i class="fa-solid fa-right-from-bracket"></i> Logout</button>
     </div>
   </div>

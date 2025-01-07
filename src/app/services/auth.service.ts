@@ -1,13 +1,13 @@
-// src/app/services/user-registration.service.ts
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { catchError, Observable, throwError, tap, BehaviorSubject } from 'rxjs';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-    private apiUrl = 'http://localhost:8080/api/';
+    private apiUrl = environment.apiUrl;
 
     private authState = new BehaviorSubject<boolean>(false);
     authState$ = this.authState.asObservable();
